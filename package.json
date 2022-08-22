@@ -1,0 +1,27 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "cypress.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Janaki Manoharan",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^10.6.0",
+    "cypress-cucumber-attach-screenshots-to-failed-steps": "^1.0.0",
+    "cypress-cucumber-preprocessor": "^4.3.1",
+    "multiple-cucumber-html-reporter": "^1.21.6"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "stepDefinitions": "cypress/e2e",
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/reports/cucumberreport",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
+  }
+}
