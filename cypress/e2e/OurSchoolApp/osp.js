@@ -9,7 +9,7 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     // returning false here prevents Cypress from
     // failing the test
     return false
-  })
+})
 
 let home
 before(function () {
@@ -32,6 +32,14 @@ And('User clicks On Contact Group', () => {
 
 Then('Verify the news website', () => {
     cy.url().should('include', "/news")
+    newsPage.newsContent().contains(home.newsContent)
+})
+
+Then('Launch the qatest application', () => {
+    cy.visit(home.qaSite)
+})
+
+And('Validate the news feed page', () => {
     newsPage.newsContent().contains(home.newsContent)
 })
 
